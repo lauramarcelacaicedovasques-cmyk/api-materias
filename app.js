@@ -4,9 +4,9 @@ const materiasRouter = require('./materias');
 
 app.use(express.json());
 
-app.use('/materias', materiasRouter);
+app.use('/api/v1/materias', materiasRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
-})
+  console.log(`Servidor corriendo en el puerto ${PORT}`);
+});
