@@ -1,0 +1,8 @@
+export async function update(id, { mensaje, fecha_hora, canal, leido }) {
+  await pool.execute(
+    `UPDATE recordatorio
+     SET mensaje = ?, fecha_hora = ?, canal = ?, leido = ?, updated_at = NOW()
+     WHERE id_recordatorio = ?`,
+    [mensaje, fecha_hora, canal, leido, id]
+  );
+}
