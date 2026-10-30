@@ -1,0 +1,6 @@
+export async function remove(id) {
+  await pool.execute(
+    `DELETE FROM recordatorio WHERE id_recordatorio = ?`,
+    [id]
+  );
+}
