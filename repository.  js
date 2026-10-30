@@ -1,0 +1,8 @@
+export async function create({ id_tarea, mensaje, fecha_hora, canal, leido }) {
+  const [result] = await pool.execute(
+    `INSERT INTO recordatorio (id_tarea, mensaje, fecha_hora, canal, leido, created_at, updated_at)
+     VALUES (?, ?, ?, ?, ?, NOW(), NOW())`,
+    [id_tarea, mensaje, fecha_hora, canal, leido || false]
+  );
+  return result.insertId;
+}
